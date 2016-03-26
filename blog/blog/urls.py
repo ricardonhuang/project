@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from passage import views as pa_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^$', pa_views.home,name='home'),
+    url(r'^passage/',pa_views.displaypassage,name='displaypassage')
+    ]
